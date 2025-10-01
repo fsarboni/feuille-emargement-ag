@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feuille d'émargement - AG Extraordinaire</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 1.5cm;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 297mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #333;
+        }
+        
+        .header h1 {
+            font-size: 22px;
+            margin: 0 0 8px 0;
+            color: #333;
+        }
+        
+        .header h2 {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .info-section {
+            margin: 15px 0;
+            padding: 12px;
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-section p {
+            margin: 4px 0;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+        
+        .info-section strong {
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            padding: 10px 6px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 11px;
+            border: 1px solid #5568d3;
+        }
+        
+        td {
+            padding: 12px 6px;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+            font-size: 10px;
+            min-height: 40px;
+        }
+        
+        .numero-col {
+            width: 4%;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .nom-col {
+            width: 20%;
+        }
+        
+        .prenom-col {
+            width: 20%;
+        }
+        
+        .vote-col {
+            width: 7%;
+            text-align: center;
+        }
+        
+        .signature-col {
+            width: 28%;
+        }
+        
+        .vote-checkbox {
+            width: 14px;
+            height: 14px;
+            border: 2px solid #666;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+        
+        .footer {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 2px solid #333;
+            font-size: 10px;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+        }
+        
+        .signature-line {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .signature-box {
+            width: 45%;
+        }
+        
+        .signature-box p {
+            margin: 5px 0;
+            font-size: 11px;
+        }
+        
+        .signature-box .line {
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">🖨️ Imprimer</button>
+    
+    <div class="header">
+        <h1>FEUILLE D'ÉMARGEMENT</h1>
+        <h2>Assemblée Générale Extraordinaire</h2>
+        <h2>Association du Polder de Guissény et Plouguerneau</h2>
+    </div>
+    
+    <div class="info-section">
+        <p><strong>Date :</strong> Dimanche 26 octobre 2025</p>
+        <p><strong>Heure :</strong> 10h00</p>
+        <p><strong>Lieu :</strong> Maison communale de Guissény</p>
+        <p><strong>Objet :</strong> Engagement d'une procédure judiciaire concernant les malfaçons de notre assainissement collectif</p>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th class="numero-col">N°</th>
+                <th class="nom-col">NOM</th>
+                <th class="prenom-col">PRÉNOM</th>
+                <th class="vote-col">POUR</th>
+                <th class="vote-col">CONTRE</th>
+                <th class="vote-col">ABST.</th>
+                <th class="signature-col">SIGNATURE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="numero-col">1</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">2</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">3</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">4</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">5</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">6</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">7</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">8</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">9</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">10</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">11</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">12</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">13</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">14</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">15</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">16</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">17</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">18</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">19</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+            <tr>
+                <td class="numero-col">20</td>
+                <td class="nom-col"></td>
+                <td class="prenom-col"></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="vote-col"><span class="vote-checkbox"></span></td>
+                <td class="signature-col"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="footer">
+        <p><strong>Instructions :</strong></p>
+        <p>• Chaque participant doit inscrire son nom et prénom en MAJUSCULES</p>
+        <p>• Cocher UNE SEULE case correspondant à son vote (Pour / Contre / Abstention)</p>
+        <p>• Apposer sa signature dans la dernière colonne</p>
+        <p>• Les procurations reçues par email ou courrier seront comptabilisées séparément</p>
+        
+        <div class="signature-line">
+            <div class="signature-box">
+                <p><strong>Le Président de séance</strong></p>
+                <p>Nom : ____________________________</p>
+                <div class="line"></div>
+                <p style="text-align: center; margin-top: 5px;">Signature</p>
+            </div>
+            <div class="signature-box">
+                <p><strong>Le Secrétaire de séance</strong></p>
+                <p>Nom : ____________________________</p>
+                <div class="line"></div>
+                <p style="text-align: center; margin-top: 5px;">Signature</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
